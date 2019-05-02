@@ -22,12 +22,14 @@ public class GameBoard {
         if (this.rowWin() || this.columnWin() || this.diagonalWin() || this.diagonalReverseWin()) {
             return "Win";
         }
-        for (int i = 5; i >= 0 ; i --) {
-            if (forceFour[i][column].equals("free")) {
-                forceFour[i][column] = sign;
-                this.lastSign = sign;
-                counter++;
-                return "Added";
+        else{
+            for (int i = 5; i >= 0 ; i --) {
+                if (forceFour[i][column].equals("free")) {
+                    forceFour[i][column] = sign;
+                    this.lastSign = sign;
+                    counter++;
+                    return "Added";
+                }
             }
         }
         if (counter == 42) {
